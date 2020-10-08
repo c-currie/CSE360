@@ -6,7 +6,7 @@ package cse360assignment02;
  * history.
  *
  * @author Cody Currie
- * @version 1.0
+ * @version 1.1
  * @since 2020-10-7
  */
 
@@ -15,6 +15,11 @@ public class AddingMachine {
 	 * Total value at any given time.
 	 */
 	private int total;
+	
+	/**
+	 * String representing arithmetic history.
+	 */
+	private String history = "";
 
 	/**
 	 * This class creates an AddingMachine object that can add and subtract an int
@@ -22,45 +27,47 @@ public class AddingMachine {
 	 */
 	public AddingMachine() {
 		total = 0; // not needed - included for clarity
+		history += "0";
 	}
 
 	/**
-	 * TODO Returns the current total.
+	 * Returns the current total.
 	 */
 	public int getTotal() {
-		return 0;
+		return total;
 	}
 
 	/**
-	 * TODO Adds an int value to the current total.
-	 * 
+	 * Adds an int value to the current total.
 	 * @param value
 	 */
 	public void add(int value) {
-
+		total += value;
+		history += " + " + value;
 	}
 
 	/**
-	 * TODO Subtracts a value from the current total.
-	 * 
+	 * Subtracts a value from the current total.
 	 * @param value
 	 */
 	public void subtract(int value) {
-
+		total -= value;
+		history += " - " + value;
 	}
 
 	/**
-	 * TODO Prints out a formatted String representation of the operations and
+	 * Prints out a formatted String representation of the operations and
 	 * values.
 	 */
 	public String toString() {
-		return "";
+		return history;
 	}
 
 	/**
-	 * TODO Clears all of the current operations from the String
+	 * Clears all of the current operations from the String, and resets the total.
 	 */
 	public void clear() {
-
+		total = 0;
+		history = "";
 	}
 }
